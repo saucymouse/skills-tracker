@@ -20,7 +20,7 @@ public class SkillsController {
 
     @GetMapping("form")
     public String printForm() {
-        return "<form action='/formDisplay' method='post'>" +
+        return "<form method='post'>" +
                 "<label>Name: <div><input type='text' name='name'></label></div>" +
                 "<label>My favorite language:" +
                 "<div><select name='firstLang'>" +
@@ -41,9 +41,9 @@ public class SkillsController {
                 "</form>";
     }
 
-    @PostMapping("formDisplay")
-    public String printInfo(@RequestParam String name, String firstLang, String secondLang, String thirdLang) {
-        return "<h1>" + name + "</h1>" +
+    @PostMapping("form")
+    public String printInfo(@RequestParam String name, @RequestParam String firstLang, @RequestParam String secondLang, @RequestParam String thirdLang) {
+        return  "<h1>" + name + "</h1>" +
                 "<ol>" +
                 "<li>" + firstLang + "</li>" +
                 "<li>" + secondLang + "</li>" +
