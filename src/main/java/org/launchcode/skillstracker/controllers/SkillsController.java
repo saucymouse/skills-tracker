@@ -43,7 +43,26 @@ public class SkillsController {
 
     @PostMapping("form")
     public String printInfo(@RequestParam String name, @RequestParam String firstLang, @RequestParam String secondLang, @RequestParam String thirdLang) {
-        return  "<h1>" + name + "</h1>" +
+        return "<form method='post'>" +
+                "<label>Name: <div><input type='text' name='name'></label></div>" +
+                "<label>My favorite language:" +
+                "<div><select name='firstLang'>" +
+                "<option value='Java'>Java</option>" +
+                "<option value='JavaScript'>JavaScript</option>" +
+                "<option value='Python'>Python</option></select></div>" +
+                "<label>My second favorite language:" +
+                "<div><select name='secondLang'>" +
+                "<option value='Java'>Java</option>" +
+                "<option value='JavaScript'>JavaScript</option>" +
+                "<option value='Python'>Python</option></select></div>" +
+                "<label>My third favorite language:" +
+                "<div><select name='thirdLang'>" +
+                "<option value='Java'>Java</option>" +
+                "<option value='JavaScript'>JavaScript</option>" +
+                "<option value='Python'>Python</option></select></div>" +
+                "<input type='submit' value='Submit'>" +
+                "</form>" +
+                "<h1>" + name + "</h1>" +
                 "<ol>" +
                 "<li>" + firstLang + "</li>" +
                 "<li>" + secondLang + "</li>" +
